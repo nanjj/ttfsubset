@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestGetAllRunes(t *testing.T) {
 	runes, err := GetAllRunes("testdata/zhong.ttf")
