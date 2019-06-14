@@ -1,6 +1,8 @@
 package main
 
 import (
+	"io/ioutil"
+	"os"
 	"sort"
 	"strings"
 
@@ -22,5 +24,14 @@ func GetAllRunes(fname string) (runes string, err error) {
 	}
 	sort.Strings(a)
 	runes = strings.Join(a, "")
+	return
+}
+
+func ReadRunesFromStdin() (runes string) {
+	b, err := ioutil.ReadAll(os.Stdin)
+	if err != nil {
+		return
+	}
+	runes = string(b)
 	return
 }
